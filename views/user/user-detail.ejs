@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partial/head %>
+</head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+    <% include ../partial/navbar %>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+     <% include ../partial/sidebar %>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="col-12 grid-margin">
+              <div class="card">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card-body">
+                      <h4 class="card-title">User Detail</h4>
+                      <p class="card-description">User Datail Here</p>
+                      <div class="template-demo text-center">
+                        <h3 class="text-primary">Name : <%= user.name %></h3>
+                        <h3 class="text-primary">Email : <%= user.email %></h3>
+                        <button type="button" onclick="del();" class="btn btn-danger btn-fw  btn-lg">
+                          <i class="mdi mdi-alert-outline"></i>Delete</button>
+                        <a href="/users/userupdate/<%=user._id%>"><button type="button" class="btn btn-info btn-fw btn-lg mt-2">
+                          <i class="mdi mdi-upload"></i>Update</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+           </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+       <% include ../partial/footer %>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+   <% include ../partial/script %>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <!-- End custom js for this page-->
+  </body>
+  <script type="text/javascript">
+  function del() {
+    var a=confirm('Are you sure to delete!');
+    if(a){
+      location.href="/users/userdelete/<%=user._id%>";
+    }
+  }
+  </script>
+</html>

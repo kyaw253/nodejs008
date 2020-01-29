@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Post Add</title>
+  </head>
+  <body>
+    <h1>Post Add</h1>
+    <form class="" action="/posts/postadd" method="post">
+      <label for="title">title</label>
+      <input type="text" name="title" id="title" value=""><p>
+      <label for="content">content</label>
+      <input type="text" name="content" id="content" value=""><p>
+        <label for="author">author</label>
+      <select class="" name="author"id="author">
+        <% for(var i=0;i<users.length;i++) {%>
+         <option value="<%=users[i]._id%>"><%=users[i].name%></option>
+         <%}%>
+      </select><p>
+        <input type="submit" name="" value="Add">
+    </form>
+  </body>
+</html>
